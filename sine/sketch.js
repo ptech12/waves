@@ -25,17 +25,23 @@ function draw(){
 	ellipse(x, y, 8); 
 	line(0, 0, x, y); // drawing line from center to the point 
 	line(x, y, 200, y); // Drawing line  from outside the point
-	// inner circle
-	noFill()
+	// outer circle
+	noFill();
+	stroke(255);
+	ellipse(0, 0, r*1.5);
+	fill(255);
+	ellipse(x*1.8, y*1.8, 8);
+	noFill();
 	translate(200, 0);	
 	beginShape();
 	noFill();
 	for(let i = 0 ; i < wave.length; i++){
-		point(i, wave[i-1])
+		// ellipse(0, 0, wave[i], );
+		point(i, wave[i]-1);
 	}
 	endShape();
 	if(wave.length > 400){
 		wave.pop();
 	}
-	theta += 0.03;
+	theta += 0.05;
 }
