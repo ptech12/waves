@@ -8,7 +8,7 @@ var x, y;
 let n = 0;
 function draw(){
 	background(0);
-	translate(300, 300);
+	translate(200, 300);
 	var r = 75 * (4 * (1 / PI)); // Radius of the circle
 	for(let i=0; i < 2; i++){
 		n = i * 2 + 1;
@@ -28,20 +28,23 @@ function draw(){
 	// outer circle
 	noFill();
 	stroke(255);
-	ellipse(0, 0, r*1.5);
+	ellipse(0, 0, r*2.5);
 	fill(255);
-	ellipse(x*1.8, y*1.8, 8);
+	ellipse(x*1.25, y*1.25, 8);
+	line(0, 0, x*1.25, y*1.25);
+	line(x*1.25, y*1.25, 200, y*1.25);
 	noFill();
 	translate(200, 0);	
 	beginShape();
 	noFill();
+	stroke(0, 0, 255);
 	for(let i = 0 ; i < wave.length; i++){
 		// ellipse(0, 0, wave[i], );
 		point(i, wave[i]-1);
 	}
 	endShape();
-	if(wave.length > 400){
+	if(wave.length > 300){
 		wave.pop();
 	}
-	theta += 0.05;
+	theta += 0.01;
 }
