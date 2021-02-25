@@ -1,3 +1,5 @@
 # Waves
 ## Hello everyone, 
-## This is my repo which contains multiple wave forms in this world, and 
+## This repo contains multiple wave forms known exist, and I try to recreate it using p5.js library
+## Anyone interested can contribute and develop it
+
