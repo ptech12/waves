@@ -54,4 +54,7 @@ function draw()
     time += timeSlider.value();
     if(waves.length >= 256)
         waves.pop();
+document.getElementById("time").innerHTML =  "Speed: " + timeSlider.value();
+document.getElementById("count").innerHTML =  "Circle Count: " + (slider.value()-1);
+    
 }
