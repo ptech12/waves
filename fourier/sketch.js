@@ -31,11 +31,9 @@ function draw()
     ellipse(prevx, prevy, r*2);
 
     ellipse(x, y, 8);
-    stroke(0);
+    stroke(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256));
     line(prevx, prevy, x, y);
-   
-
-
+    
    
    }
    noFill();
