@@ -3,9 +3,9 @@ let waves = []
 let slider;
 let timeSlider;
 function setup() {
-    createCanvas(600, 400);
+    createCanvas(710, 400);
     slider = createSlider(1, 100, 1, 1);
-    timeSlider = createSlider(0.01, 1, 0.05, 0.01);
+    timeSlider = createSlider(0.05, 10, 0.05, 0.01);
 }
 let x, y;
 let n;
@@ -27,11 +27,11 @@ function draw()
     y += r * sin(n * time);
    
     noFill();
-    stroke(255, 100);
+    stroke(255);
     ellipse(prevx, prevy, r*2);
 
     ellipse(x, y, 8);
-    stroke(255);
+    stroke(0);
     line(prevx, prevy, x, y);
    
 
@@ -52,7 +52,7 @@ function draw()
     endShape();
 
     time += timeSlider.value();
-    if(waves.length >= 256)
+    if(waves.length >= 300)
         waves.pop();
 document.getElementById("time").innerHTML =  "Speed: " + timeSlider.value();
 document.getElementById("count").innerHTML =  "Circle Count: " + (slider.value()-1);
